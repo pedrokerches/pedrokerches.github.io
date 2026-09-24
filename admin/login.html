@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Login — Painel Administrativo</title>
+<style>
+:root{color-scheme:dark;--gold:#d4af37;--bg:#050505;--panel:#111;--line:#2d2d2d}*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;background:var(--bg);color:#fff;font:16px Arial,sans-serif}.card{width:min(100% - 32px,420px);padding:32px;background:var(--panel);border:1px solid var(--line);border-radius:12px}.logo{font-size:1.5rem;font-weight:700;margin-bottom:28px}.logo span{color:var(--gold)}h1{font-size:1.45rem;margin:0 0 24px}label{display:block;margin:16px 0 7px;font-size:.9rem}input{width:100%;padding:12px;border:1px solid var(--line);border-radius:6px;background:#080808;color:#fff;font:inherit}button{width:100%;margin-top:24px;padding:13px;border:0;border-radius:6px;background:var(--gold);color:#080808;font-weight:700;cursor:pointer}button:disabled{opacity:.6;cursor:wait}.message{min-height:22px;margin-top:16px;color:#f1d77a;font-size:.9rem}.back{display:block;margin-top:22px;text-align:center;color:#aaa;font-size:.9rem}
+</style>
+</head>
+<body><main class="card"><div class="logo">Sites <span>Makers</span></div><h1>PAINEL ADMINISTRATIVO</h1><form id="loginForm" novalidate><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="username" required><label for="password">Senha</label><input id="password" name="password" type="password" autocomplete="current-password" required><button id="submit" type="submit">ENTRAR</button><p id="message" class="message" role="alert" aria-live="polite"></p></form><a class="back" href="/">Voltar ao site</a></main>
+<script>
+'use strict';
+const form=document.querySelector('#loginForm'),message=document.querySelector('#message'),button=document.querySelector('#submit');
+(async()=>{try{const r=await fetch('/api/auth/session',{credentials:'same-origin'});if(r.ok)location.replace('/admin/')}catch{}})();
+form.addEventListener('submit',async event=>{event.preventDefault();message.textContent='';const email=form.email.value.trim(),password=form.password.value;if(!email||!password){message.textContent='Preencha o e-mail e a senha.';return}button.disabled=true;button.textContent='ENTRANDO...';try{const r=await fetch('/api/auth/login',{method:'POST',headers:{'Content-Type':'application/json'},credentials:'same-origin',body:JSON.stringify({email,password})});if(r.ok){location.replace('/admin/');return}message.textContent=r.status===401?'E-mail ou senha incorretos.':'Erro de autenticação. Tente novamente.'}catch{message.textContent='Erro de autenticação. Tente novamente.'}finally{button.disabled=false;button.textContent='ENTRAR'}});
+</script></body></html>

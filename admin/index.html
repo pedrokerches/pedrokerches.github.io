@@ -1,0 +1,4 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PAINEL ADM — SITES MAKERS</title></head><body><p>Verificando sessão...</p><script>
+(async()=>{const r=await fetch('/api/auth/session',{credentials:'same-origin'});if(!r.ok){location.replace('/admin/login');return}location.replace('/?admin=1#admin')})();
+</script></body></html>
