@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seu Nome — Desenvolvedor em formação</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F4EE; --ink:#1B1B1B; --accent:#2F6F6B; --accent-light:#E4EEEC;
+  --muted:#5C574C; --line:#DAD5C8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.6}
+h1,h2,h3{font-family:'Space Grotesk',sans-serif}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px}
+
+nav{border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg)}
+.navrow{display:flex;justify-content:space-between;align-items:center;padding:18px 24px;max-width:860px;margin:0 auto}
+.navrow .logo{font-family:'Space Grotesk',sans-serif;font-weight:700}
+.navrow a{color:var(--muted);text-decoration:none;margin-left:22px;font-size:.92rem}
+.navrow a:hover{color:var(--accent)}
+
+.hero{padding:70px 24px 50px;text-align:left}
+.hero h1{font-size:clamp(1.9rem,5vw,2.8rem)}
+.hero p{color:var(--muted);margin-top:14px;max-width:50ch}
+.tag{display:inline-block;background:var(--accent-light);color:var(--accent);padding:6px 14px;border-radius:20px;font-size:.82rem;margin-top:18px}
+
+section{padding:50px 24px;border-top:1px solid var(--line)}
+.sec-title{font-size:1.5rem;margin-bottom:26px}
+
+.about{display:grid;grid-template-columns:1fr;gap:30px}
+@media(min-width:680px){.about{grid-template-columns:180px 1fr}}
+.photo{width:180px;height:180px;border-radius:50%;background:var(--accent-light);border:2px dashed var(--accent);display:flex;align-items:center;justify-content:center;text-align:center;color:var(--accent);font-size:.82rem;padding:10px}
+.about p{color:var(--muted);max-width:56ch}
+.about p + p{margin-top:14px}
+
+.skills{display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:600px){.skills{grid-template-columns:repeat(2,1fr)}}
+.skill{border:1px solid var(--line);border-radius:8px;padding:16px 18px;background:#fff}
+.skill h3{font-size:1rem;margin-bottom:6px}
+.skill p{color:var(--muted);font-size:.88rem}
+.bar{height:6px;background:var(--line);border-radius:4px;margin-top:10px;overflow:hidden}
+.bar span{display:block;height:100%;background:var(--accent)}
+
+footer{padding:36px 24px;text-align:center;color:var(--muted);font-size:.85rem}
+footer a{color:var(--accent);text-decoration:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="navrow">
+    <span class="logo">Seu Nome</span>
+    <div>
+      <a href="#sobre">Sobre mim</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#contato">Contato</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <h1>Olá, eu sou [Seu Nome] 👋</h1>
+  <p>Estudante do ensino médio, apaixonado por tecnologia e em construção de uma carreira em desenvolvimento web.</p>
+  <span class="tag">Em formação — aprendendo todos os dias</span>
+</header>
+
+<section id="sobre">
+  <h2 class="sec-title">Sobre mim</h2>
+  <div class="about">
+    <div class="photo">Coloque<br>sua foto<br>aqui</div>
+    <div>
+      <p>Sou um estudante que descobriu a programação há alguns meses e desde então não parei mais de estudar. Hoje já sei criar sites, tenho boa base em inglês e Python, e estou avançando bastante em JavaScript.</p>
+      <p>No momento estou aprendendo a criar sites 100% profissionais e me aprofundando em JavaScript, para conseguir construir projetos cada vez mais completos. Meu objetivo é evoluir constantemente e, no futuro, atuar profissionalmente com desenvolvimento web.</p>
+    </div>
+  </div>
+</section>
+
+<section id="habilidades">
+  <h2 class="sec-title">Habilidades</h2>
+  <div class="skills">
+    <div class="skill"><h3>Criação de sites</h3><p>Construo sites do zero, do planejamento ao design.</p><div class="bar"><span style="width:70%"></span></div></div>
+    <div class="skill"><h3>Inglês</h3><p>Leio, escrevo e me comunico bem em inglês.</p><div class="bar"><span style="width:70%"></span></div></div>
+    <div class="skill"><h3>Python</h3><p>Uso para lógica de programação e pequenos projetos.</p><div class="bar"><span style="width:60%"></span></div></div>
+    <div class="skill"><h3>JavaScript</h3><p>Boa parte da linguagem já domino, e continuo estudando mais.</p><div class="bar"><span style="width:55%"></span></div></div>
+    <div class="skill"><h3>Design</h3><p>Crio layouts e identidades visuais para sites e projetos.</p><div class="bar"><span style="width:65%"></span></div></div>
+    <div class="skill"><h3>Slides</h3><p>Monto apresentações claras e visualmente organizadas.</p><div class="bar"><span style="width:65%"></span></div></div>
+  </div>
+</section>
+
+<section id="contato">
+  <h2 class="sec-title">Contato</h2>
+  <p style="color:var(--muted)">Quer conversar ou ver mais dos meus projetos?</p>
+  <p style="margin-top:8px">
+    <a href="mailto:seuemail@exemplo.com" style="color:var(--accent);text-decoration:none">seuemail@exemplo.com</a><br>
+    <a href="https://github.com/seu-usuario" style="color:var(--accent);text-decoration:none">github.com/seu-usuario</a>
+  </p>
+</section>
+
+<footer>Feito por [Seu Nome] · <a href="#sobre">voltar ao topo</a></footer>
+
+</body>
+</html>
